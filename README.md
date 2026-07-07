@@ -1,135 +1,137 @@
 # AI Dev KB
 
-> 面向：普通用户与 AI
+> 帮助普通用户使用 AI，从一个想法开始，开发并上线能够服务真实用户的复杂软件产品。
 
-## 我为什么建立这个知识库
+## 我是第一次使用
 
-我希望自己即使不是专业程序员，也能借助 ChatGPT、Claude Code、Cursor 等 AI，把一个想法逐步做成能够服务真实用户的正式产品。
+我不需要先读完整个知识库。
 
-我不只是想让 AI 帮我写几段代码。我希望它能陪我完成：
+直接打开：
 
-```text
-想法
-→ 市场与用户判断
-→ 产品需求
-→ 系统架构
-→ 功能开发
-→ 测试与安全检查
-→ 部署上线
-→ 监控、运营和持续迭代
-```
+[`USER_START.md`](./USER_START.md)
 
-AI 很擅长快速生成内容，但大型项目真正困难的地方是：AI 会忘记项目背景、误解需求、擅自扩大修改范围、破坏原有架构，或者在没有真实测试时告诉我“已经完成”。
-
-因此，这个知识库不是提示词合集，而是一套让我和 AI 都知道“现在处于什么阶段、应该做什么、什么不能做、怎样才算真的完成”的项目工作系统。
-
-## 我应该从哪里开始
-
-第一次使用时，我只需要先读：
-
-1. [`USER_START.md`](./USER_START.md)：告诉我怎样使用整个知识库。
-2. [`00-user-guide/`](./00-user-guide/)：用第一人称、案例和流程图解释我怎样与 AI 合作。
-3. 当我真正启动项目时，复制 [`05-project-template/`](./05-project-template/) 中的六个项目文件。
-
-AI 开始工作时必须先读：
-
-1. [`AI_START.md`](./AI_START.md)
-2. [`AI_DOCS.md`](./AI_DOCS.md)
-3. 当前 AI 平台的适配器，例如 [`06-platforms/chatgpt-web/README.md`](./06-platforms/chatgpt-web/README.md)
-4. 当前项目的正式项目文件
-
-## 文档分成两条路线
-
-```mermaid
-flowchart LR
-    A[我有一个项目想法] --> B[用户文章]
-    B --> C[我知道该回答什么、确认什么]
-    C --> D[项目正式文档]
-    D --> E[AI工程规范]
-    E --> F[AI实施、验证和交付]
-
-    B -.帮助我理解.-> G[00-user-guide]
-    E -.约束AI行为.-> H[01~06 AI文档]
-```
-
-### 用户需要看的文章
-
-放在 `00-user-guide/`。
-
-这些文章使用“我”的角度，主要帮助我：
-
-- 把模糊想法表达给 AI；
-- 知道 AI 需要哪些信息；
-- 学会批准需求、架构和任务；
-- 判断 AI 是只生成了代码，还是已经真实验证；
-- 用案例理解复杂项目如何被拆解。
-
-用户文章可以使用比喻、示例、图表和故事，但它们不是正式项目事实。
-
-### AI 需要看的文档
-
-主要是：
-
-- `AI_START.md`
-- `AI_DOCS.md`
-- `01-ai-collaboration/`
-- `02-product-definition/`
-- `03-system-design/`
-- `04-delivery/`
-- `06-platforms/`
-
-这些文档必须保持结构明确、术语一致、状态可追踪、规则可执行。AI 不应把用户文章中的例子误认为当前项目需求。
-
-### 我和 AI 共同维护的项目文件
-
-放在 `05-project-template/`，复制到具体项目后使用：
-
-- `PROJECT.md`：项目、市场、用户和范围
-- `PRD.md`：需求、角色、业务规则和验收标准
-- `ARCHITECTURE.md`：领域、模块、数据、接口、安全和规模
-- `PLAN_AND_STATE.md`：任务、进度、分支和当前状态
-- `DECISIONS_RISKS_EVIDENCE.md`：决定、风险、假设和真实证据
-- `RELEASE.md`：环境、部署、监控和回滚
-
-## 当前目录
+然后按新手实战路线逐步完成：
 
 ```text
-ai-dev-kb/
-├─ README.md
-├─ USER_START.md
-├─ AI_START.md
-├─ AI_DOCS.md
-├─ 00-user-guide/           # 我需要看的文章和案例
-├─ 00-research/             # 调研结论与来源
-├─ 01-ai-collaboration/     # AI协作、上下文、任务和变更规则
-├─ 02-product-definition/   # 产品、PRD、领域和需求追踪
-├─ 03-system-design/        # 架构、安全、可靠性和成本
-├─ 04-delivery/             # 实施、质量、发布和生产运维
-├─ 05-project-template/     # 每个项目的正式知识包
-└─ 06-platforms/            # 不同AI平台的适配方式
+准备开发环境
+→ 创建第一个项目会话
+→ 明确产品和需求
+→ 设计可上线架构
+→ 开发第一个可用功能
+→ 测试和修复
+→ 部署到线上
+→ 处理卡点并持续迭代
 ```
 
-## 一个最重要的原则
+每一步都会告诉我：
 
-我可以用自然语言表达需求，但我不能只对 AI 说“帮我把整个项目做完”。
+- 在哪里操作；
+- 需要准备什么；
+- 可以复制给 AI 的提示词；
+- AI 应该返回什么；
+- 我怎样检查；
+- 怎样才算完成；
+- 卡住时怎么办。
 
-我需要和 AI 一起把复杂项目转换成：
+## 这个知识库为什么存在
+
+AI 很容易生成代码和页面，但复杂项目经常失败在：
+
+- AI 没有真正理解项目；
+- 需求在聊天中不断变化；
+- 修改范围失控；
+- 登录存在但权限错误；
+- 本地能运行，生产环境失败；
+- AI 说“完成”，但没有真实测试；
+- 项目换聊天或换 AI 后重新从零开始；
+- 上线后没有日志、监控、回退和成本控制。
+
+这个知识库把大型项目开发转换成可以被用户理解、被 AI 执行、被真实证据验证的连续流程。
+
+## 文档分成三类
+
+### 1. 用户实战课程
+
+入口：[`00-user-guide/`](./00-user-guide/)
+
+用户文章采用第一人称、步骤、案例、流程图、工作表和可复制提示词。
+
+### 2. AI 工程规范
+
+入口：
+
+- [`AI_START.md`](./AI_START.md)
+- [`AI_DOCS.md`](./AI_DOCS.md)
+- [`01-ai-collaboration/`](./01-ai-collaboration/)
+- [`02-product-definition/`](./02-product-definition/)
+- [`03-system-design/`](./03-system-design/)
+- [`04-delivery/`](./04-delivery/)
+- [`06-platforms/`](./06-platforms/)
+
+AI 文档保持结构化、严谨和可执行，约束上下文、任务、修改、测试、发布和证据。
+
+### 3. 我和 AI 共同维护的项目文件
+
+从 [`05-project-template/`](./05-project-template/) 复制：
 
 ```text
-明确目标
-+ 已批准范围
-+ 可追踪需求
-+ 架构边界
-+ 小型任务
-+ 真实验证
-+ 可回滚发布
+PROJECT.md
+PRD.md
+ARCHITECTURE.md
+PLAN_AND_STATE.md
+DECISIONS_RISKS_EVIDENCE.md
+RELEASE.md
 ```
 
-AI 可以提高我的执行能力，但最终上线的是软件，不是 AI 的回答。
+用户教程用于帮助我理解，正式项目文件才代表当前项目事实。
+
+## 新手主线
+
+| 阶段 | 实战文章 | 实际产物 |
+|---|---|---|
+| 起点 | `00-新手实战总路线.md` | 完整路线图 |
+| 准备 | `01-30分钟准备开发环境.md` | AI 工作空间、GitHub、运行环境 |
+| 立项 | `02-我创建第一个项目会话.md` | `PROJECT.md` |
+| 需求 | `03-我把想法变成可开发需求.md` | `PRD.md` |
+| 架构 | `04-我让AI设计可上线的系统.md` | `ARCHITECTURE.md` |
+| 开发 | `05-我开发第一个可用功能.md` | Task、代码、Commit |
+| 验证 | `06-我测试并修复功能.md` | 测试与证据 |
+| 发布 | `07-我把项目部署到线上.md` | 线上版本和 Runbook |
+| 恢复 | `08-我卡住时怎样让AI自救.md` | 诊断与恢复流程 |
+
+## 两个直接可用的工具
+
+- [`新手项目工作表`](./00-user-guide/workbook/新手项目工作表.md)
+- [`新手提示词包`](./00-user-guide/prompts/新手提示词包.md)
+
+## 支持的 AI 平台
+
+通用核心不绑定单一 AI。
+
+当前首个完整适配器是：
+
+- [`ChatGPT 网页端`](./06-platforms/chatgpt-web/README.md)
+
+后续可以增加 Claude Code、Cursor、Gemini CLI、GitHub Copilot 等平台适配器，而不重写项目核心文档。
+
+## 最重要的状态规则
+
+```text
+GENERATED  已生成，未真实运行
+EXECUTED   已运行，未完整验收
+VERIFIED   需求和检查通过
+RELEASED   已发布到生产环境
+OBSERVED   已经过真实用户和生产观察
+```
+
+没有真实证据时，AI 不得提升状态。
 
 ## 版本
 
-当前版本：`V1.2 User / AI Split`  
+当前版本：`V1.3 Novice Hands-on`  
 更新日期：`2026-07-07`
 
-调研结论与来源见 [`00-research/FINDINGS.md`](./00-research/FINDINGS.md) 和 [`00-research/REFERENCES.md`](./00-research/REFERENCES.md)。
+调研和参考来源见：
+
+- [`00-research/FINDINGS.md`](./00-research/FINDINGS.md)
+- [`00-research/REFERENCES.md`](./00-research/REFERENCES.md)
